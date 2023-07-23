@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center align-items-center container ">  
+    <div class="col-sm-6">
+<div class="card" style="width: 33rem;height: 25rem">
+    <div class="card-body">
+  <h1 style="color: blue;">Add Product</h1>
+  <form [formGroup]="form" (ngSubmit)="addproduct()">
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" class="form-control" ngModel #name="ngModel" name="name" pattern="[a-zA-Z0-9]+$" >
+        <span *ngIf="name.invalid && name.touched" style="color: red;">Please enter the Valid Name</span>
+    </div>
+
+      <div class="form-group">
+        <label>Product Price</label>
+        <input type="text" class="form-control" ngModel #price="ngModel"  name="price" pattern="[0-9]+$">
+        <span *ngIf="price.invalid && price.touched" style="color: red;">Please enter the Price Name</span>
+      </div>
+
+      <div class="form-group">
+        <label>Upload Image</label>
+        <input type="file" class="form-control"  (change)="uploadFile($event)" required/>
+    </div>
+
+      <div class="form-group">
+        <label>Category Id</label>
+        <input type="number" class="form-control" ngModel #product_id="ngModel"  name="product_id" pattern="[0-9]+$">
+        <span *ngIf="product_id.invalid && product_id.touched" style="color: red;">Please enter the Product id</span>
+      </div>
+<br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    </div>
+  </div>
+  </div>
+  

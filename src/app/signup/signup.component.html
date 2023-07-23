@@ -1,0 +1,39 @@
+  <div class="d-flex justify-content-center align-items-center container ">  
+    <div class="col-sm-6">
+      <!-- <% if(typeof msg!='undefined'){%>
+        <div class="alert alert-warning" role="alert">
+      <p><%=msg%></p>
+      </div>
+      <%}%> -->
+      <div class="card" style="width: 34rem;height: 21rem">
+        <div class="card-body">
+          <h1 style="color: blue;">Signup</h1>
+              <form #signup="ngForm" >                
+                  
+                  <div class="form-group">
+                      <label>Name</label>
+                  <input type="text"  name="name" required ngModel #name="ngModel" class="form-control" pattern="[a-zA-Z]+$"  placeholder="Enter full name" >
+                  <span *ngIf="name.invalid && name.touched" style="color: red;">Please enter the Valid Name</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" name="password" required ngModel #password="ngModel"  class="form-control"  pattern="[a-z0-9]+$" placeholder="Enter password">
+                  <span *ngIf="password.invalid && password.touched" style="color: red;" >Please enter the Valid Password</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="email" required ngModel #email="ngModel"  class="form-control" pattern="[a-z0-9]+@[a-z]+\.[a-z]{3}" placeholder="Enter email">
+                  <span *ngIf="email.invalid && email.touched" style="color: red;" >Please enter the Valid Email</span>
+                  </div>
+<br>
+
+                      <button type="submit" class="btn btn-primary" (click)="onsubmit(signup.value)"  >Signup</button>
+                      <a href="/login" style="float:right">Already have an account?</a>
+                    </form>
+              
+    </div>
+    </div>
+    </div>
+    </div>

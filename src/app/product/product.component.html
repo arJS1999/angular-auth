@@ -1,0 +1,51 @@
+<h1>eSports</h1>
+<hr>
+<div class="container">
+    <div class="row">
+    <p *ngIf="productlist.length <= 0" class="no-data text-center">There is no Bat added yet!</p>
+    <b><h5>{{categoryname}}</h5></b>
+<ng-container *ngFor="let product of productlist">
+<div class="card col-md-3">
+<h5>{{product.product_name}}</h5>
+<button type="button" class="btn btn-primary" >Add to Cart</button>
+</div>
+</ng-container>
+</div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+<p *ngIf="productlist1.length <= 0" class="no-data text-center">There is no Ball added yet!</p>
+<b><h5>{{categoryname1}}</h5></b>
+<ng-container *ngFor="let product of productlist1">
+<div class="card col-md-3">
+<h5>{{product.product_name}}</h5>
+<button class="btn btn-primary">Add to Cart</button>
+</div>
+</ng-container>
+</div>
+</div>
+    
+<!-- <p>product works!</p>
+<div class="container">
+    <div class="row">
+    <p *ngIf="categorylist.length <= 0" class="no-data text-center">There is no Mobile added yet!</p>
+    <div class="card col-md-3">
+        
+            <ng-container *ngIf="categorylist.category_name[0]=='Mobile'">
+                <p>{{categorylist.category_name[0]}}</p>
+
+                <ng-container *ngFor="let product of productlist">
+                    <p>{{product.product_name}}</p>
+                    </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="categorylist.category_name[1]=='Labtop'">
+                        <p>{{categorylist.category_name[1]}}</p>
+                    <ng-container *ngFor="let product of productlist1">
+                        <p>{{product.product_name}}</p>
+                        </ng-container> 
+            </ng-container>
+</div>
+</div>
+</div>
+ -->
